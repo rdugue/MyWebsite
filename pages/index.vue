@@ -39,34 +39,50 @@
     </div>
   </section>-->
   <div class="wrapper">
-    <div class="trapezoid"></div>
+    <div class="trapezoid container">
+      <portrait
+        url="/profile.jpg"></portrait>
+    <div class="content">
+      <strong class="text-style">
+        Hi, I'm Ralph. I am a software engineer with over 7 years of professional experience.
+        I have Android application development, and web development. I enjoy working with Kotlin,
+        Python, JavaScript, and more recently Go. I am also a huge Lakers fan as evidenced by
+        the color scheme, and in my spare time I like to play video games, study artificial
+        intelligence, and do some writing.
+      </strong>
+    </div>
+    </div>
   </div>
 </template>
 
-<script>
-// import Card from '~/components/Card'
+<script lang="ts">
+import Portrait from '../components/Portrait.vue'
 
 export default {
   name: 'HomePage',
 
-  components: {}
+  components: { Portrait }
 }
 </script>
+
 <style>
   .wrapper {
     height: 100%;
     width: 100%;
-    background: #5455A5;
     position: relative;
   }
 
   .trapezoid {
-    border-bottom: 300px solid #595;
+    border-bottom: 300px solid #5455A5;
     border-left: 100px solid transparent;
-    height: 100%;
+    height: 0%;
     width: 45%;
-    position: absolute;
     top: 0;
-    right: 0;
+    left: 27.5%;
+    padding: 80px 0;
+  }
+
+  .text-style {
+    color: white;
   }
 </style>

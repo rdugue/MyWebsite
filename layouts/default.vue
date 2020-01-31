@@ -92,4 +92,10 @@ export default {
 .columns.is-fullheight .column {
   overflow-y: auto;
 }
+.gold {
+    background-image: linear-gradient(to right, #FBBA22 , white 85%);
+}
+.purple {
+  background-color: #5455A5;
+}
 </style>

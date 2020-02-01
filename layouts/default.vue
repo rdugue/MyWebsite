@@ -24,8 +24,8 @@
       </div>
     </nav>
 
-    <section class="main-content columns is-fullheight">
-      <aside class="column is-2 section">
+    <section class="main-content columns is-fullheight gold">
+      <aside class="column is-2 section purple">
         <p class="menu-label is-hidden-touch">navigation</p>
         <ul class="menu-list">
           <li v-for="(item, key) of items" :key="key">
@@ -93,9 +93,9 @@ export default {
   overflow-y: auto;
 }
 .gold {
-    background-image: linear-gradient(to right, #FBBA22 , white 85%);
+  background-image: linear-gradient(to right, #fbba22, white 85%);
 }
 .purple {
-  background-color: #5455A5;
+  background-color: #5455a5;
 }
 </style>

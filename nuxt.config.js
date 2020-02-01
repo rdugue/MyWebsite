@@ -63,5 +63,23 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: "/sessions", method: "post", propertyName: "token" },
+          logout: { url: "/sessions", method: "delete" },
+          user: {
+            url: "/sessions/user",
+            method: "get",
+            propertyName: "data.attributes"
+          }
+        }
+        // tokenRequired: true,
+        // tokenType: 'bearer'
+      }
+    }
   }
 };

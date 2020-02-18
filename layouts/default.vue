@@ -37,7 +37,7 @@
         </ul>
       </aside>
 
-      <div class="column is-10">
+      <div class="column is-fullheight is-10">
         <nuxt />
       </div>
     </section>

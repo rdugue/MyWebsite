@@ -1,64 +1,43 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
+    <nav class="navbar header has-shadow is-primary" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-        <img
-          src="~assets/RalphLogo5.png"
-          alt="Home"
-          height="30"
-        >
-        <strong>Ralph Dugue</strong>
+        <a class="navbar-item" href="/">
+          <img src="~assets/RalphLogo5.png" alt="Home" height="30" />
+          <strong>Ralph Dugue</strong>
         </a>
       </div>
 
       <div class="navbar-end">
-        <a class="bd-navbar-icon navbar-item" href="https://github.com/rdugue">
+        <a class="bd-navbar-icon navbar-item" href="#">
           <b-icon icon="github-circle" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="https://twitter.com/rdugue89">
+        <a class="bd-navbar-icon navbar-item" href="#">
           <b-icon icon="twitter" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="https://www.linkedin.com/in/rdugue/">
+        <a class="bd-navbar-icon navbar-item" href="#">
           <b-icon icon="linkedin" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="https://medium.com/@rdugue1">
+        <a class="bd-navbar-icon navbar-item" href="#">
           <b-icon icon="medium" />
-        </a>
-        <a class="bd-navbar-icon navbar-item" href="https://www.twitch.tv/kingphito">
-          <b-icon icon="twitch" />
         </a>
       </div>
     </nav>
 
     <section class="main-content columns is-fullheight gold">
       <aside class="column is-2 section purple">
-        <p class="menu-label is-hidden-touch">
-          navigation
-        </p>
+        <p class="menu-label is-hidden-touch">navigation</p>
         <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
-          >
-            <nuxt-link
-              :to="item.to"
-              exact-active-class="is-active"
-            >
-              <b-icon :icon="item.icon" /> {{ item.title }}
+          <li v-for="(item, key) of items" :key="key">
+            <nuxt-link :to="item.to" exact-active-class="is-active">
+              <b-icon :icon="item.icon" />
+              {{ item.title }}
             </nuxt-link>
           </li>
         </ul>
       </aside>
 
-      <div class="column is-10">
+      <div class="column is-fullheight is-10">
         <nuxt />
       </div>
     </section>
@@ -67,45 +46,45 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       items: [
         {
-          title: 'About Me',
-          icon: 'account-card-details',
-          to: { name: 'index' }
+          title: "About Me",
+          icon: "account-card-details",
+          to: { name: "index" }
         },
         {
-          title: 'Resume',
-          icon: 'cloud-print',
-          to: { name: 'resume' }
+          title: "Resume",
+          icon: "cloud-print",
+          to: { name: "resume" }
         },
         {
-          title: 'Projects',
-          icon: 'lightbulb',
-          to: { name: 'projects' }
+          title: "Projects",
+          icon: "lightbulb",
+          to: { name: "projects" }
         },
         {
-          title: 'Writing',
-          icon: 'pen',
-          to: { name: 'writing' }
+          title: "Writing",
+          icon: "pen",
+          to: { name: "blog" }
         },
         {
-          title: 'Contact',
-          icon: 'email',
-          to: { name: 'contact' }
+          title: "Contact",
+          icon: "email",
+          to: { name: "contact" }
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style>
 .columns.is-fullheight {
-  min-height: calc(100vh - ( 3.25rem - .75rem ) );
-  max-height: calc(100vh - ( 3.25rem - .75rem ) );
-  height: calc(100vh - ( 3.25rem - .75rem ) );
+  min-height: calc(100vh - (3.25rem - 0.75rem));
+  max-height: calc(100vh - (3.25rem - 0.75rem));
+  height: calc(100vh - (3.25rem - 0.75rem));
   display: flex;
   flex-direction: row;
   justify-content: stretch;
@@ -114,9 +93,9 @@ export default {
   overflow-y: auto;
 }
 .gold {
-    background-image: linear-gradient(to right, #FBBA22 , white 85%);
+  background-image: linear-gradient(to right, #fbba22, white 85%);
 }
 .purple {
-  background-color: #5455A5;
+  background-color: #5455a5;
 }
 </style>

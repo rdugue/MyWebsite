@@ -9,17 +9,20 @@
       </div>
 
       <div class="navbar-end">
-        <a class="bd-navbar-icon navbar-item" href="#">
+        <a class="bd-navbar-icon navbar-item" href="https://github.com/rdugue">
           <b-icon icon="github-circle" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="#">
+        <a class="bd-navbar-icon navbar-item" href="https://twitter.com/rdugue89">
           <b-icon icon="twitter" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="#">
+        <a class="bd-navbar-icon navbar-item" href="https://www.linkedin.com/in/rdugue/">
           <b-icon icon="linkedin" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="#">
+        <a class="bd-navbar-icon navbar-item" href="https://medium.com/@rdugue1">
           <b-icon icon="medium" />
+        </a>
+        <a class="bd-navbar-icon navbar-item" href="https://www.twitch.tv/kingphito">
+          <b-icon icon="twitch" />
         </a>
       </div>
     </nav>

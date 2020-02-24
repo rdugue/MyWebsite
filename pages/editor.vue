@@ -18,7 +18,7 @@ import marked from "marked";
 import * as _ from "lodash";
 
 export default Vue.extend({
-  //middleware: "auth",
+  middleware: "auth",
   data() {
     return {
       input: "# hello"

@@ -54,7 +54,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: "https://us-east1-website-blog-db.cloudfunctions.net/"
+  },
   /*
    ** Build configuration
    */
@@ -69,16 +71,12 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: "/sessions", method: "post", propertyName: "token" },
-          logout: { url: "/sessions", method: "delete" },
-          user: {
-            url: "/sessions/user",
-            method: "get",
-            propertyName: "data.attributes"
-          }
-        }
-        // tokenRequired: true,
-        // tokenType: 'bearer'
+          login: { url: "function-1", method: "post" },
+          logout: { url: "function-1", method: "delete" },
+          user: false
+        },
+        tokenRequired: false,
+        tokenType: false
       }
     }
   }

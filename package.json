@@ -17,6 +17,7 @@
     "@nuxtjs/auth": "^4.8.5",
     "@nuxtjs/axios": "^5.9.5",
     "@vue/composition-api": "^0.3.4",
+    "dotenv": "^8.2.0",
     "eslint-plugin-nuxt": "^0.5.1",
     "lodash": "^4.17.15",
     "marked": "^0.8.0",

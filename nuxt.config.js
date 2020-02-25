@@ -16,6 +16,7 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
+  serverMiddleware: ["~/api/nodemailer"],
   /*
    ** Customize the progress-bar color
    */
@@ -55,7 +56,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://us-east1-website-blog-db.cloudfunctions.net/"
+    baseURL: ""
   },
   /*
    ** Build configuration
@@ -71,8 +72,14 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: "function-1", method: "post" },
-          logout: { url: "function-1", method: "delete" },
+          login: {
+            url: process.env.AUTH_SERVER,
+            method: "post"
+          },
+          logout: {
+            url: process.env.AUTH_SERVER,
+            method: "delete"
+          },
           user: false
         },
         tokenRequired: false,

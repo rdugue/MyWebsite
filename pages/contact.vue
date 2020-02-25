@@ -58,7 +58,22 @@ export default Vue.extend({
     };
   },
   methods: {
-    sendMessage(email: Email) {}
+    async sendMessage(email: Email) {
+      const data = new FormData();
+      data.append("subject", email.subject);
+      data.append("name", email.name);
+      data.append("address", email.address);
+      data.append("message", email.message);
+      try {
+        const response = await this.$axios.$post("function-2", data);
+        /*this.$toast.open({
+          message: "Your email has been sent successfully!",
+          type: "is-success"
+        });*/
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 });
 </script>

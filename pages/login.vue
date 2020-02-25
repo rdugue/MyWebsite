@@ -1,18 +1,31 @@
 <template>
-  <div class="columns">
-    <div class="column is-3"></div>
-    <div class="box column is-half is-primary is-vcentered">
-      <section>
-        <b-field label="Username">
-          <b-input v-model="user.username" maxlength="30"></b-input>
-        </b-field>
+  <div class="container">
+    <div class="columns pad">
+      <div class="column is-5"></div>
+      <div class="box column is-3 is-primary">
+        <div class="level">
+          <figure class="image is-128x128 center">
+            <img src="/logo.png" />
+          </figure>
+        </div>
+        <section>
+          <b-field>
+            <b-input placeholder="Username" v-model="user.username" maxlength="30"></b-input>
+          </b-field>
 
-        <b-field label="Password">
-          <b-input type="password" v-model="user.password" maxlength="30" password-reveal></b-input>
-        </b-field>
+          <b-field>
+            <b-input
+              placeholder="Password"
+              type="password"
+              v-model="user.password"
+              maxlength="30"
+              password-reveal
+            ></b-input>
+          </b-field>
 
-        <b-button type="is-warning" @click="loginUser(user)" outlined>Login</b-button>
-      </section>
+          <b-button type="is-warning" @click="loginUser(user)" expanded outlined>Login</b-button>
+        </section>
+      </div>
     </div>
   </div>
 </template>
@@ -47,5 +60,14 @@ export default Vue.extend({
 <style>
 .is-primary {
   background-color: #5455a5;
+}
+
+.pad {
+  padding-top: 150px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
 }
 </style>

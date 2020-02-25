@@ -19,7 +19,9 @@
       "@nuxt/types",
       "@types/nuxtjs__auth" /*"@nuxtjs/auth"*/,
       "@types/marked",
-      "@types/lodash"
+      "@types/lodash",
+      "buefy/types",
+      "@nuxtjs/axios"
     ]
   },
   "exclude": ["node_modules"]

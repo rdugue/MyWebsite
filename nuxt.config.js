@@ -16,6 +16,7 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
+  serverMiddleware: ["~/api/nodemailer"],
   /*
    ** Customize the progress-bar color
    */
@@ -54,7 +55,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: ""
+  },
   /*
    ** Build configuration
    */
@@ -69,16 +72,18 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: "/sessions", method: "post", propertyName: "token" },
-          logout: { url: "/sessions", method: "delete" },
-          user: {
-            url: "/sessions/user",
-            method: "get",
-            propertyName: "data.attributes"
-          }
-        }
-        // tokenRequired: true,
-        // tokenType: 'bearer'
+          login: {
+            url: process.env.AUTH_SERVER,
+            method: "post"
+          },
+          logout: {
+            url: process.env.AUTH_SERVER,
+            method: "delete"
+          },
+          user: false
+        },
+        tokenRequired: false,
+        tokenType: false
       }
     }
   }

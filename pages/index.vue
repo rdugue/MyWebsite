@@ -184,8 +184,12 @@
             I have Android application development, and web development. I enjoy working with Kotlin,
             Python, JavaScript, and more recently Go. I am also a huge Lakers fan as evidenced by
             the color scheme, and in my spare time I like to
-            <a href="https://www.twitch.tv/kingphito">play video games,</a>
-            <a href="https://medium.com/@rdugue1">study artificial intelligence,</a>
+            <a
+              href="https://www.twitch.tv/kingphito"
+            >play video games,</a>
+            <a
+              href="https://github.com/rdugue/Machine-Learning-Notebooks"
+            >study artificial intelligence,</a>
             and do
             <a href="https://medium.com/@rdugue1">some writing.</a>
           </strong>

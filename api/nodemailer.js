@@ -30,7 +30,6 @@ const sendMail = (email, provider) => {
       from: `${email.name} <${email.address}>`,
       to: email.recipient,
       subject: email.subject,
-      html: `<b><h1>${email.message}</h1></b>`
-    });
+      text: email.message
   }, 100);
 };

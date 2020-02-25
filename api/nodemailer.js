@@ -31,5 +31,6 @@ const sendMail = (email, provider) => {
       to: email.recipient,
       subject: email.subject,
       text: email.message
+    });
   }, 100);
 };

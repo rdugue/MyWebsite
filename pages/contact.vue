@@ -8,21 +8,11 @@
     <div class="box">
       <section>
         <b-field>
-          <b-input
-            name="subject"
-            v-model="email.subject"
-            placeholder="Subject"
-            expanded
-          ></b-input>
+          <b-input name="subject" v-model="email.subject" placeholder="Subject" expanded></b-input>
         </b-field>
 
         <b-field>
-          <b-input
-            name="name"
-            placeholder="Name"
-            v-model="email.name"
-            expanded
-          ></b-input>
+          <b-input name="name" placeholder="Name" v-model="email.name" expanded></b-input>
           <b-input
             name="email"
             type="email"
@@ -33,19 +23,13 @@
         </b-field>
 
         <b-field>
-          <b-input
-            type="textarea"
-            placeholder="Message"
-            v-model="email.message"
-          ></b-input>
+          <b-input type="textarea" placeholder="Message" v-model="email.message"></b-input>
         </b-field>
 
         <b-field>
           <!-- Label left empty for spacing -->
           <p class="control">
-            <button class="button is-primary" @click="sendMessage(email)">
-              Say hi!
-            </button>
+            <button class="button is-primary" @click="sendMessage(email)">Say hi!</button>
           </p>
         </b-field>
       </section>
@@ -75,17 +59,13 @@ export default Vue.extend({
   },
   methods: {
     async sendMessage(email: Email) {
+      const data = new FormData();
+      data.append("subject", email.subject);
+      data.append("name", email.name);
+      data.append("address", email.address);
+      data.append("message", email.message);
       try {
-        const response = await this.$axios.$post("/api/nodemailer", {
-          email: email,
-          provider: {
-            host: process.env.HOST,
-            port: process.env.PORT,
-            user: process.env.USER,
-            pass: process.env.PASS,
-            recipient: process.env.EMAIL
-          }
-        });
+        const response = await this.$axios.$post("function-2", data);
         /*this.$toast.open({
           message: "Your email has been sent successfully!",
           type: "is-success"

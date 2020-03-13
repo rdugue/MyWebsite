@@ -3,7 +3,7 @@
     <section class="box is-centered">
       <b-button class="is-medium is-primary">Save</b-button>
       <b-button class="is-medium is-primary">Publish</b-button>
-      <b-button class="is-medium is-primary" @click="$auth.logout()">Logout</b-button>
+      <b-button class="is-medium is-primary" @click="logout()">Logout</b-button>
     </section>
     <div class="box" id="editor">
       <textarea :value="input" @input="update"></textarea>
@@ -16,6 +16,7 @@
 import Vue from "vue";
 import marked from "marked";
 import * as _ from "lodash";
+import { ToastProgrammatic as Toast } from "buefy";
 
 export default Vue.extend({
   middleware: "auth",
@@ -30,6 +31,15 @@ export default Vue.extend({
     }
   },
   methods: {
+    async logout() {
+      await this.$auth.logout();
+      //this.$auth.setUser({});
+      Toast.open({
+        message: "Successfully logged out!",
+        type: "is-success"
+      });
+      this.$router.push("/login");
+    },
     update: _.debounce(function(this: any, e: any) {
       this.$data.input = e.target.value;
     }, 300)

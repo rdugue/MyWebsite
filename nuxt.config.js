@@ -55,7 +55,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://us-east1-website-blog-db.cloudfunctions.net" //process.env.AUTH_SERVER
+    baseURL: process.env.AUTH_SERVER
   },
   /*
    ** Build configuration
@@ -68,21 +68,25 @@ export default {
   },
 
   auth: {
+    redirect: {
+      login: "/login",
+      logout: "/",
+      home: false,
+      // pointing callback to /app makes /app open to public access
+      callback: "/"
+    },
+    watchLoggedIn: true,
     strategies: {
       local: {
         endpoints: {
           login: {
             url: "function-1",
-            method: "post"
+            method: "post",
+            propertyName: "data.token"
           },
-          logout: {
-            url: "function-1",
-            method: "delete"
-          },
+          logout: false,
           user: false
-        },
-        tokenRequired: false,
-        tokenType: false
+        }
       }
     }
   }

@@ -39,6 +39,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { ToastProgrammatic as Toast } from "buefy";
 
 interface Email {
   subject: string;
@@ -66,10 +67,10 @@ export default Vue.extend({
       data.append("message", email.message);
       try {
         const response = await this.$axios.$post("function-2", data);
-        /*this.$toast.open({
+        Toast.open({
           message: "Your email has been sent successfully!",
           type: "is-success"
-        });*/
+        });
       } catch (error) {
         console.log(error);
       }

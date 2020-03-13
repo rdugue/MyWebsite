@@ -10,7 +10,11 @@
         </div>
         <section>
           <b-field>
-            <b-input placeholder="Username" v-model="user.username" maxlength="30"></b-input>
+            <b-input
+              placeholder="Username"
+              v-model="user.username"
+              maxlength="30"
+            ></b-input>
           </b-field>
 
           <b-field>
@@ -23,7 +27,9 @@
             ></b-input>
           </b-field>
 
-          <b-button type="is-warning" @click="loginUser(user)" expanded outlined>Login</b-button>
+          <b-button type="is-warning" @click="loginUser(user)" expanded outlined
+            >Login</b-button
+          >
         </section>
       </div>
     </div>
@@ -32,6 +38,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { ToastProgrammatic as Toast } from "buefy";
 
 interface User {
   username: string;
@@ -48,10 +55,22 @@ export default Vue.extend({
   },
   methods: {
     async loginUser(user: User) {
-      await this.$auth.loginWith("local", {
-        data: user
-      });
-      this.$router.push("/editor");
+      try {
+        await this.$auth.loginWith("local", {
+          data: user
+        });
+        this.$router.push("/editor");
+        Toast.open({
+          message: "Successfully logged in!",
+          type: "is-success"
+        });
+      } catch (err) {
+        console.error(err);
+        Toast.open({
+          message: err.message,
+          type: "is-error"
+        });
+      }
     }
   }
 });

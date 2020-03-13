@@ -21,7 +21,8 @@
       "@types/marked",
       "@types/lodash",
       "buefy/types",
-      "@nuxtjs/axios"
+      "@nuxtjs/axios",
+      "@types/bcrypt"
     ]
   },
   "exclude": ["node_modules"]

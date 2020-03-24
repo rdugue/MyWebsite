@@ -181,7 +181,7 @@
         <div class="content">
           <strong class="text-style">
             Hi, I'm Ralph. I am a software engineer with over 7 years of professional experience.
-            I have Android application development, and web development. I enjoy working with Kotlin,
+            I have done both Android application development, and web development. I enjoy working with Kotlin,
             Python, JavaScript, and more recently Go. I am also a huge Lakers fan as evidenced by
             the color scheme, and in my spare time I like to
             <a

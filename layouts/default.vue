@@ -1,6 +1,10 @@
 <template>
   <div>
-    <nav class="navbar header has-shadow is-primary" role="navigation" aria-label="main navigation">
+    <nav
+      class="navbar header has-shadow is-primary"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
           <img src="~assets/RalphLogo5.png" alt="Home" height="30" />
@@ -12,16 +16,28 @@
         <a class="bd-navbar-icon navbar-item" href="https://github.com/rdugue">
           <b-icon icon="github-circle" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="https://twitter.com/rdugue89">
+        <a
+          class="bd-navbar-icon navbar-item"
+          href="https://twitter.com/rdugue89"
+        >
           <b-icon icon="twitter" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="https://www.linkedin.com/in/rdugue/">
+        <a
+          class="bd-navbar-icon navbar-item"
+          href="https://www.linkedin.com/in/rdugue/"
+        >
           <b-icon icon="linkedin" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="https://medium.com/@rdugue1">
-          <b-icon icon="medium" />
+        <a
+          class="bd-navbar-icon navbar-item"
+          href="https://medium.com/@rdugue1"
+        >
+          <b-icon icon="pen" />
         </a>
-        <a class="bd-navbar-icon navbar-item" href="https://www.twitch.tv/kingphito">
+        <a
+          class="bd-navbar-icon navbar-item"
+          href="https://www.twitch.tv/kingphito"
+        >
           <b-icon icon="twitch" />
         </a>
       </div>
@@ -33,7 +49,7 @@
         <ul class="menu-list">
           <li v-for="(item, key) of items" :key="key">
             <nuxt-link :to="item.to" exact-active-class="is-active">
-              <b-icon :icon="item.icon" />
+              <b-icon :icon="item.icon" size="is-small" />
               {{ item.title }}
             </nuxt-link>
           </li>
@@ -54,7 +70,7 @@ export default {
       items: [
         {
           title: "About Me",
-          icon: "account-card-details",
+          icon: "id-card",
           to: { name: "index" }
         },
         {

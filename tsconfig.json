@@ -16,7 +16,7 @@
     },
     "types": [
       "@types/node",
-      "@nuxt/types",
+      "@nuxt/typesypes@0.7.9+",
       "@types/nuxtjs__auth" /*"@nuxtjs/auth"*/,
       "@types/marked",
       "@types/lodash",
